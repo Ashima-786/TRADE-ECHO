@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000000;
+  --dark: #050505;
+  --sandal: #d4af37;
+  --sandal-light: #e5c158;
+  --sandal-dark: #b8912e;
+  --white: #ffffff;
+  --gray: #9ca3af;
+  --border: rgba(255,255,255,0.08);
+}
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--sandal); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--sandal-light); }
+}
+
+@layer components {
+  .btn-primary { @apply bg-brand-green text-black font-semibold px-5 py-2.5 rounded-full hover:bg-brand-green-bright transition-all duration-200 cursor-pointer; }
+  .btn-secondary { @apply bg-white/10 text-white font-semibold px-5 py-2.5 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-200 cursor-pointer; }
+  .card-dark { @apply bg-brand-dark-card border border-brand-dark-border rounded-2xl; }
+  .grid-bg {
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .text-gradient-green { @apply text-brand-green; }
+  .nav-link { @apply text-sm text-white/70 hover:text-white transition-colors duration-150 font-medium; }
+  .input-dark { @apply bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand-green transition-colors w-full; }
+}
